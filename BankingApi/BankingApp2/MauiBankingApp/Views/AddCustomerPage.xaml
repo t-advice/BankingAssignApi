@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiBankingApp.Views.AddCustomerPage"
+             Title="Add Customer">
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Entry x:Name="FirstNameEntry" Placeholder="First Name" />
+            <Entry x:Name="LastNameEntry" Placeholder="Last Name" />
+            <Entry x:Name="EmailEntry" Placeholder="Email" Keyboard="Email" />
+            <Entry x:Name="PhoneEntry" Placeholder="Phone Number" Keyboard="Telephone" />
+            <Label Text="Identity Number" />
+            <Entry x:Name="IdentityNumberEntry" Placeholder="Enter ID Number" />
+
+            <Label Text="Gender" />
+            <Picker x:Name="GenderPicker" Title="Select Gender">
+                <Picker.Items>
+                    <x:String>Male</x:String>
+                    <x:String>Female</x:String>
+                    <x:String>Other</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Nationality" />
+            <Entry x:Name="NationalityEntry" Placeholder="Enter nationality" />
+
+            <Label Text="Marital Status" />
+            <Picker x:Name="MaritalStatusPicker" Title="Select Status">
+                <Picker.Items>
+                    <x:String>Single</x:String>
+                    <x:String>Married</x:String>
+                    <x:String>Divorced</x:String>
+                    <x:String>Widowed</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Employment Status" />
+            <Picker x:Name="EmploymentStatusPicker" Title="Select Employment">
+                <Picker.Items>
+                    <x:String>Employed</x:String>
+                    <x:String>Unemployed</x:String>
+                    <x:String>Self-Employed</x:String>
+                    <x:String>Student</x:String>
+                    <x:String>Retired</x:String>
+                </Picker.Items>
+            </Picker>
+
+
+
+            <Label Text="Enter Bank Details" FontAttributes="Bold"/>
+            <Label Text="Bank Name" />
+            <Entry x:Name="BankNameEntry" Placeholder="Enter bank name" />
+
+            <Label Text="Bank Address" />
+            <Entry x:Name="BankAddressEntry" Placeholder="Enter bank address" />
+
+            <Label Text="Branch Code" />
+            <Entry x:Name="BranchCodeEntry" Placeholder="Enter branch code" />
+
+            <Label Text="Bank Phone" />
+            <Entry x:Name="ContactPhoneNumberEntry" Placeholder="Enter bank phone" />
+
+            <Label Text="Bank Email" />
+            <Entry x:Name="ContactEmailEntry" Placeholder="Enter bank email" />
+
+            <Label Text="Operating Hours" />
+            <Entry x:Name="OperatingHoursEntry" Placeholder="Enter operating hours" />
+
+            <Button Text="Save Customer"
+                Clicked="OnSaveClicked"
+                BackgroundColor="CadetBlue"
+                CornerRadius="4"
+                TextColor="Black"
+                FontAttributes="Bold" />
+
+            <Button Text="Cancel"
+                Clicked="OnCancelClicked"
+                BackgroundColor="#B0B0B0"
+                TextColor="Black"
+                    CornerRadius="4"
+                FontAttributes="Bold" />
+
+
+
+
+
+        </VerticalStackLayout>
+
+
+
+
+
+
+
+    </ScrollView>
+    
+</ContentPage>

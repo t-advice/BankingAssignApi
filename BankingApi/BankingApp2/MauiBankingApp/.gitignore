@@ -1,0 +1,62 @@
+﻿## .NET & Visual Studio
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+
+## Rider IDE
+.idea/
+
+## Mac
+.DS_Store
+
+## Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+## NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+*.nuget.props
+*.nuget.targets
+
+## MAUI / Xamarin
+*.xamarin.cache
+*.xamarin.config
+*.xamarin.forms.cache
+*.xamarin.history
+
+# Android
+*.apk
+*.ap_ 
+*.dex
+*.class
+*.aar
+bin/
+obj/
+*.keystore
+*.jks
+*.keystore.*
+
+# iOS / Mac
+*.app
+*.ipa
+*.dSYM/
+*.xcworkspace/
+*.xcuserdata/
+*.xcuserstate
+*.plist
+*.hmap
+*.ipa
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/

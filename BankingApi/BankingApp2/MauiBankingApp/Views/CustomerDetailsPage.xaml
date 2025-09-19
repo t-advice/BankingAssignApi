@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiBankingApp.Models"
+             x:Class="MauiBankingApp.Views.CustomerDetailsPage"
+             Title="Customer Details">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+           
+            <Frame BorderColor="DarkGray" CornerRadius="10" Padding="10">
+                <VerticalStackLayout>
+                    <Label Text="{Binding FirstName}" FontSize="22" FontAttributes="Bold" />
+                    <Label Text="{Binding LastName}" FontSize="22" FontAttributes="Bold" />
+                    <Label Text="{Binding Email}" />
+                    <Label Text="{Binding PhoneNumber}" />
+                    <Label Text="{Binding PhysicalAddress}" />
+                    <Label Text="{Binding IdentityNumber}" />
+                    <Label Text="{Binding Gender}" />
+                    <Label Text="{Binding Nationality}" />
+                    <Label Text="{Binding MaritalStatus}" />
+                    <Label Text="{Binding EmploymentStatus}" />
+                    
+                    <Label Text="Bank Details" FontAttributes="Bold" />
+                    <Label Text="{Binding Bank.BankName}" FontAttributes="Italic" />
+                    <Label Text="{Binding Bank.BankAddress}" />
+                    <Label Text="{Binding Bank.BranchCode}" />
+                    <Label Text="{Binding Bank.ContactPhoneNumber}" />
+                    <Label Text="{Binding Bank.ContactEmail}" />
+                    <Label Text="{Binding Bank.OperatingHours}" />
+                </VerticalStackLayout>
+            </Frame>
+
+            
+            <Frame BorderColor="Green" CornerRadius="10" Padding="10">
+                <Label x:Name="BalanceLabel"
+                       Text="{Binding Balance, StringFormat='Balance: {0:C}'}"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       TextColor="Green" />
+            </Frame>
+
+           
+            <Label Text="Transactions:" FontSize="18" FontAttributes="Bold" />
+
+            <CollectionView x:Name="TransactionsList"
+                            ItemsSource="{Binding Transactions}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Transaction">
+                        <Frame BorderColor="LightGray" CornerRadius="8" Padding="5" Margin="5">
+                            <VerticalStackLayout>
+                                <Label Text="{Binding Type}" FontAttributes="Bold" />
+                                <Label Text="{Binding Amount, StringFormat='Amount: {0:C}'}" />
+                                <Label Text="{Binding Date, StringFormat='{0:dd MMM yyyy HH:mm}'}" />
+                                <Label Text="{Binding Description}" FontAttributes="Italic" />
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Add Transaction" Clicked="OnAddTransactionClicked" CornerRadius="4" 
+                    TextColor="Black" FontAttributes="Bold"
+                    BackgroundColor="Yellow" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

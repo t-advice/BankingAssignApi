@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiBankingApp.Views.AddTransactionPage"
+             Title="Add Transaction">
+
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Transaction Type" FontSize="18" />
+
+        <Picker x:Name="TransactionTypePicker">
+            <Picker.Items>
+                <x:String>Deposit</x:String>
+                <x:String>Withdrawal</x:String>
+            </Picker.Items>
+        </Picker>
+
+        <Entry x:Name="AmountEntry"
+               Placeholder="Enter amount"
+               Keyboard="Numeric" />
+
+        <Entry x:Name="DescriptionEntry"
+               Placeholder="Description (optional)" />
+
+        <Button Text="Save Transaction"
+                Clicked="OnSaveTransactionClicked" />
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiBankingApp.Models"
+             x:Class="MauiBankingApp.Views.CustomerListPage"
+             Title="Customers">
+
+    <Grid Padding="20" RowDefinitions="*,Auto" RowSpacing="10">
+
+        
+        <CollectionView x:Name="CustomerList"
+                        Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Customer">
+                    <Frame BorderColor="Gray"
+                           CornerRadius="10"
+                           Margin="5"
+                           Padding="10"
+                           BackgroundColor="White"
+                           HasShadow="True"
+                           InputTransparent="False">
+
+                        <VerticalStackLayout Spacing="5">
+                            <Label Text="{Binding FirstName}" FontSize="20" FontAttributes="Bold"/>
+                            <Label Text="{Binding LastName}" FontSize="20" FontAttributes="Bold" />
+                            <Label Text="{Binding Balance, StringFormat='Balance: {0:C}'}"
+                                   TextColor="Green" FontAttributes="Bold" />
+                            <Label Text="{Binding Bank.BankName}" FontAttributes="Bold" />
+
+                            <Button Text="View Details"
+                                    FontSize="14"
+                                    HeightRequest="30"
+                                    CornerRadius="4"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    BackgroundColor="Yellow"
+                                    HorizontalOptions="Center"
+                                    Clicked="OnViewDetailsClicked"
+                                    BindingContext="{Binding .}" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+        <Button Text="Add New Customer"
+                Grid.Row="1"
+                HeightRequest="40"
+                Clicked="OnAddCustomerClicked"
+                HorizontalOptions="Fill"
+                VerticalOptions="End"
+                BackgroundColor="SteelBlue"
+                TextColor="Black"
+                CornerRadius="4"
+                FontAttributes="Bold" />
+    </Grid>
+</ContentPage>
+
+
+
